@@ -19,7 +19,7 @@ export function formatCards(intent, data) {
   }
 }
 
-// 기존 formatResponse도 유지 (폴백용)
+// @deprecated — not used by server.js
 export function formatResponse(intent, data) {
   const cards = formatCards(intent, data);
   const reply = formatReplyText(intent, data);

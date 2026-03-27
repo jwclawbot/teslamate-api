@@ -5,6 +5,7 @@ const OLLAMA_URL = 'http://localhost:11434';
 const MODEL = 'mistral-small3.1:24b';
 
 // ─── Intent + Parameters Extraction ────────────────────
+// @deprecated — not used by server.js
 export async function extractIntent(message) {
   const systemPrompt = `당신은 TeslaMate 차량 데이터 분석 시스템의 intent 분류기입니다.
 사용자의 질문을 분석하여 JSON으로 응답하세요.

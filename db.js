@@ -6,7 +6,7 @@ const pool = new pg.Pool({
   port: parseInt(process.env.DB_PORT || '5432'),
   database: process.env.DB_NAME || 'teslamate',
   user: process.env.DB_USER || 'teslamate',
-  password: process.env.DB_PASS || '0234c8a0b7fb7cac1cca7876c41085f9',
+  password: process.env.DB_PASS,
   max: 5,
   connectionTimeoutMillis: 3000,
 });

@@ -22,7 +22,10 @@ const PORT = parseInt(process.env.PORT || '3001');
 
 // ─── 보안 미들웨어 ──────────────────────────────────────
 app.use(helmet());
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors({
+  origin: ['http://localhost:3002', 'http://192.168.50.11:3002'],
+  credentials: true,
+}));
 app.use(express.json({ limit: '10kb' }));
 
 // 전역 rate limit
