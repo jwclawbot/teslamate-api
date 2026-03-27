@@ -4,6 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+dotenv.config();
+
 import { queryVehicleData } from './queries.js';
 import { formatCards } from './formatter.js';
 import { extractTimeRange } from './timeRange.js';
@@ -14,8 +16,6 @@ import {
   generateTokens,
   verifyRefreshToken,
 } from './auth.js';
-
-dotenv.config();
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001');
