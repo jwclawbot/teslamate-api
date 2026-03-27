@@ -9,7 +9,8 @@ const JWT_EXPIRES = process.env.JWT_EXPIRES_IN || '15m';
 const JWT_REFRESH_EXPIRES = process.env.JWT_REFRESH_EXPIRES_IN || '7d';
 
 // ─── PIN 해시 검증 ──────────────────────────────────────
-// TODO: PIN 해시화 필요 — teslalink-web/src/app/api/auth/route.ts와 동일한 방식으로 마이그레이션 예정
+// HMAC-SHA256 기반 PIN 검증 (APP_PIN_HASH + APP_SALT 환경변수)
+// teslalink-web/auth/route.ts는 SHA-256 단방향, 여기는 HMAC-SHA256 — 별도 시스템
 export function verifyPin(pin) {
   const storedHash = process.env.APP_PIN_HASH;
   const salt = process.env.APP_SALT;
